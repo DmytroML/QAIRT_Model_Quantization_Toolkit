@@ -1,5 +1,8 @@
 .venv/
 models/
+# Python cache
+src/__pycache__/
+__pycache__/
 *.test
 README copy.md
 "00 import model YOLO11n.py"
