@@ -1,5 +1,5 @@
 .venv/
+models/
 *.test
 README copy.md
-00 import model YOLO11n.py
 "00 import model YOLO11n.py"
