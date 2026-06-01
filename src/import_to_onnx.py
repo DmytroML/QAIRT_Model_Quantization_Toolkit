@@ -8,7 +8,7 @@ class get_onnx_models():
         self.model_name = model_name
         self.imgsz = imgsz
 
-    def export_model(self):
+    def import_model(self):
         # Load a COCO-pretrained YOLO11n model
         model = YOLO(f"./models/{self.model_name}.pt")
         # Export the model

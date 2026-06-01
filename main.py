@@ -4,17 +4,29 @@ import argparse
 def main(args):
     print("options:\
             \n\t-h, --help            show this help message and exit")
-    
+    get = get_onnx_models(args.model_name, args.imgsz)
+
+
     if args.default:
         print(args.model_name)
         print(args.imgsz)
-        print(args.default)  # True        
-    
-    #get = get_onnx_models('yolo11s', 640)
-    #get.export_model()
-    #get.modify_onnx()
-    #get.check_results()    
+        print(args.default)  # True   
+        
+        get.import_model()
+        get.modify_onnx()
+        get.check_results()    
+    if 'import' in args.import_mode:
+        print('import....')
+        get.import_model()
+    if 'modify' in args.import_mode:
+        print('modify....')
+        get.modify_onnx()
+    if 'check' in args.import_mode:
+        print('check....')
+        get.check_results()
 
+
+    #print(args.import_mode)  # ['import', 'modify', 'check']
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -25,11 +37,11 @@ if __name__ == "__main__":
     parser.add_argument("--default", action="store_true", help="Enable default mode")
     
     parser.add_argument(
-                        "--thresholds",
+                        "--import_mode",
                         type=str,
                         nargs='+',
-                        default=[0.25, 0.5, 0.75]
-                        , help="input image dimensions"
+                        default=[None]
+                        , help="input model settinds: import, modify, check"
                     )
 
     args = parser.parse_args()
