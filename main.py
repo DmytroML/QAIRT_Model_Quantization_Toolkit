@@ -34,8 +34,7 @@ if __name__ == "__main__":
     )
     parser.add_argument("--imgsz", type=int, default=640, help="input image dimensions")
     parser.add_argument("--model_name", type=str, default="yolo11n", help="Name of the model to use from ultralytics repository")
-    parser.add_argument("--default", action="store_true", help="Enable default mode")
-    
+    parser.add_argument("--default", action="store_true", help="Enable default mode") 
     parser.add_argument(
                         "--import_mode",
                         type=str,
