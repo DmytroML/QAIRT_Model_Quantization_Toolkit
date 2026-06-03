@@ -1,11 +1,11 @@
 from src.import_to_onnx import get_onnx_models
+import src.procesing_data as procesing_data
 import argparse
 
 def main(args):
     print("options:\
             \n\t-h, --help            show this help message and exit")
     get = get_onnx_models(args.model_name, args.imgsz)
-
 
     if args.default:
         print(args.model_name)
@@ -14,7 +14,9 @@ def main(args):
         
         get.import_model()
         get.modify_onnx()
-        get.check_results()    
+        get.check_results()   
+        procesing_data.get_calibration_data(args.imgsz).process() 
+
     if 'import' in args.import_mode:
         print('import....')
         get.import_model()
@@ -24,6 +26,13 @@ def main(args):
     if 'check' in args.import_mode:
         print('check....')
         get.check_results()
+    if 'check' in args.import_mode:
+        print('check....')
+        get.check_results()
+    if 'getROW' in args.import_mode:
+        print('getROW....')
+        procesing_data.get_calibration_data(args.imgsz).process() 
+
 
 
     #print(args.import_mode)  # ['import', 'modify', 'check']
@@ -40,9 +49,8 @@ if __name__ == "__main__":
                         type=str,
                         nargs='+',
                         default=[None]
-                        , help="input model settinds: import, modify, check"
+                        , help="input model settinds: import, modify, check, getROW"
                     )
-
     args = parser.parse_args()
 
     main(args)

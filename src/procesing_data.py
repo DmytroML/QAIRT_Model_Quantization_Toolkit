@@ -3,6 +3,7 @@ from ultralytics.data.augment import LetterBox
 import os
 import cv2
 import numpy as np
+from pathlib import Path
 
 datasets = 'datasets'
 
@@ -15,13 +16,6 @@ class get_calibration_data():
         download(self.url, dir=f'./{datasets}/input', unzip=True)
         self.letterbox = LetterBox(new_shape=(imgsz, imgsz), auto=False, scale_fill=False, scaleup=True, stride=32,)
         self.datasets=datasets
-
-
-
-
-# Apply to your image array
-#img = np.array(Image.open("your_image.jpg").convert("RGB"))
-#processed_img = letterbox(image=img)
 
 
     def process(self):
@@ -55,37 +49,18 @@ class get_calibration_data():
 
                     #img = img / 255
                     numpy_img = np.asarray(img).astype(np.float32)
-                    print (numpy_img.shape)
+                    #print (numpy_img.shape)
                     numpy_img.tofile(output_path)
+                    print(f"\r...Processing {filename}... ", end='')
+        self.create_RAW_list()
+    
+    def create_RAW_list(self):
+        target_path = Path(f'./{self.datasets}/output')
+        # Extract names of all items
+        contents =  [str(item.resolve()) for item in target_path.iterdir() if ".jpg" not in item.name]
+        with open(f'./calibration_data.txt', 'w') as f:
+                f.write('\n'.join(contents))
 
 
-get_calibration_data = get_calibration_data(imgsz=640)
-get_calibration_data.process()
-
-'''
-def create_file_list(input_dir, output_filename, ext_pattern, print_out=False, rel_path=False):
-    input_dir = os.path.abspath(input_dir)
-    output_filename = os.path.abspath(output_filename)
-    output_dir = os.path.dirname(output_filename)
-
-    if not os.path.isdir(input_dir):
-        raise RuntimeError('input_dir %s is not a directory' % input_dir)
-
-    if not os.path.isdir(output_dir):
-        raise RuntimeError('output_filename %s directory does not exist' % output_dir)
-
-    glob_path = os.path.join(input_dir, ext_pattern)
-    file_list = glob.glob(glob_path)
-
-    if rel_path:
-        file_list = [os.path.relpath(file_path, output_dir) for file_path in file_list]
-
-    if len(file_list) <= 0:
-        if print_out: print('No results with %s' % glob_path)
-    else:
-        with open(output_filename, 'w') as f:
-            f.write('\n'.join(file_list))
-            if print_out: print('%s created listing %d files.' % (output_filename, len(file_list)))
 
 
-'''

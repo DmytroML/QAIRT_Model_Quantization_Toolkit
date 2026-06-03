@@ -2,6 +2,7 @@
 .vscode/
 models/
 datasets/
+calibration_data.txt
 # Python cache
 src/__pycache__/
 __pycache__/
