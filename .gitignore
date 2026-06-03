@@ -4,9 +4,12 @@
 models/
 datasets/
 calibration_data.txt
+v2.47.0.260601.zip
+v2.47.0.260601/
+
+
 # Python cache
 src/__pycache__/
 __pycache__/
 *.test
 README copy.md
-"00 import model YOLO11n.py"
