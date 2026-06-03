@@ -9,9 +9,9 @@ pip install ultralytics==8.4.58
             onnx==1.21.0
             onnxruntime==1.23.2
 ## 
-download [text](https://softwarecenter.qualcomm.com/catalog/item/Qualcomm_AI_Runtime_Community?osArch=Any&osType=All&version=2.47.0.260601)
+download (https://softwarecenter.qualcomm.com/catalog/item/Qualcomm_AI_Runtime_Community?osArch=Any&osType=All&version=2.47.0.260601)
 
-by default did use https://ultralytics.com/assets/coco128.zip dataset      
+[text] by default did use https://ultralytics.com/assets/coco128.zip dataset      
 
 
 
