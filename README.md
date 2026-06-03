@@ -16,11 +16,16 @@ pip install ultralytics==8.4.58
 ```
 ## 4. [Install Qualcomm SDK](https://docs.qualcomm.com/doc/80-63442-10/topic/windows_setup.html#step-1-install-qualcomm-ai-engine-direct-aka-the-qnn-sdk) to curent .venv
 ### 4.1. [Download the Qualcomm SDK](https://softwarecenter.qualcomm.com/catalog/item/Qualcomm_AI_Runtime_Community?osArch=Any&osType=All&version=2.47.0.260601) and unzip 
-
-
-### 4.2. 
-
-
+### 4.2. Setup the environment using the below commands:
+```bash
+Unblock-File ./v2.47.0.260601/qairt/2.47.0.260601/bin/envsetup.ps1
+./v2.47.0.260601/qairt/2.47.0.260601/bin/envsetup.ps1
+```
+you shoul take something like:
+```bash
+[INFO] QAIRT_SDK_ROOT: C:\**********\Qualcomm QAIRT SDK MODEL QUANTISATION\v2.47.0.260601\qairt\2.47.0.260601
+[INFO] QAIRT SDK environment setup complete
+```
 
 
 [text] by default did use https://ultralytics.com/assets/coco128.zip dataset      
