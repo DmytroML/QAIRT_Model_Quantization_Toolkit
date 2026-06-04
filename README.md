@@ -21,11 +21,21 @@ pip install ultralytics==8.4.58
 Unblock-File ./v2.47.0.260601/qairt/2.47.0.260601/bin/envsetup.ps1
 ./v2.47.0.260601/qairt/2.47.0.260601/bin/envsetup.ps1
 ```
-you shoul take something like:
+you should get something like:
 ```bash
 [INFO] QAIRT_SDK_ROOT: C:\**********\Qualcomm QAIRT SDK MODEL QUANTISATION\v2.47.0.260601\qairt\2.47.0.260601
 [INFO] QAIRT SDK environment setup complete
 ```
+### 4.3. Run Unblock-File "${QAIRT_SDK_ROOT}/bin/check-windows-dependency.ps1"
+### 4.4. Run & "${QAIRT_SDK_ROOT}/bin/check-windows-dependency.ps1"
+When you have installed all the necessary dependencies, the script will say “All Done”.
+### 4.5. Run Unblock-File "${QAIRT_SDK_ROOT}/bin/envcheck.ps1"
+### 4.6. Run & "${QAIRT_SDK_ROOT}/bin/envcheck.ps1" -m
+
+
+https://docs.qualcomm.com/doc/80-63442-10/topic/windows_setup.html#step-1-install-qualcomm-ai-engine-direct-aka-the-qnn-sdk
+
+
 
 
 [text] by default did use https://ultralytics.com/assets/coco128.zip dataset      
