@@ -11,6 +11,47 @@ Supported:
 - Linux +-
 - QCS6490
 
+## Features
+
+- ONNX model quantization
+- INT8 deployment pipeline
+- Calibration dataset generation
+- QAIRT SDK integration
+- QNN conversion support
+- Windows and Linux support
+- Qualcomm NPU deployment
+
+## Tested Platforms
+
+| Platform | Status |
+|-----------|---------|
+| QCS6490 | ✅ |
+| Windows 11 | ✅ |
+
+## Quick Start
+
+### 1. Download QAIRT SDK
+
+wget https://softwarecenter.qualcomm.com/api/download/software/sdks/Qualcomm_AI_Runtime_Community/All/2.47.0.260601/v2.47.0.260601.zip
+
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+### 3. Run quantization
+
+```bash
+.venv\Scripts\Activate.ps1
+
+Unblock-File ./v2.47.0.260601/qairt/2.47.0.260601/bin/envsetup.ps1
+./v2.47.0.260601/qairt/2.47.0.260601/bin/envsetup.ps1
+
+python.exe main.py --default
+```
+
+
+
 
 # Setup environment
 ## 1. Create and activate a new virtual environment
