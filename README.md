@@ -40,8 +40,8 @@ python "$env:QAIRT_SDK_ROOT\bin\check-python-dependency"
 ```
 ### 5.2. Coppy next Qualcomm SDK lib from ./Qualcomm QAIRT SDK MODEL QUANTISATION/v2.47.0.260601/qairt/2.47.0.260601/lib/python to ./src
 ```bash
-qairt -> ./src/qairt
-qti -> ./src/qti
+./v2.47.0.260601/qairt/2.47.0.260601/lib/python/qairt -> ./src/qairt
+./v2.47.0.260601/qairt/2.47.0.260601/lib/python/qti -> ./src/qti
 ```
 
 
