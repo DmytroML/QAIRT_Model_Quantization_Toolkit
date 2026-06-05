@@ -1,7 +1,7 @@
 ## Deployment Pipeline
 
 <p align="center">
-  <img src="docs/ChatGPT Image.png" width="600">
+  <img src="docs/ChatGPT Image.png" width="400">
 </p>
 
 # QAIRT Model Quantization Toolkit
