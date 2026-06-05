@@ -43,27 +43,15 @@ python "$env:QAIRT_SDK_ROOT\bin\check-python-dependency"
 ./v2.47.0.260601/qairt/2.47.0.260601/lib/python/qairt -> ./src/qairt
 ./v2.47.0.260601/qairt/2.47.0.260601/lib/python/qti -> ./src/qti
 ```
+## 6. RUN
+For testing......
+```bash
+.venv\Scripts\Activate.ps1
 
+Unblock-File ./v2.47.0.260601/qairt/2.47.0.260601/bin/envsetup.ps1
+./v2.47.0.260601/qairt/2.47.0.260601/bin/envsetup.ps1
 
-
-
-
-https://docs.qualcomm.com/doc/80-63442-10/topic/windows_setup.html#step-1-install-qualcomm-ai-engine-direct-aka-the-qnn-sdk
-
-
-
-
-[text] by default did use https://ultralytics.com/assets/coco128.zip dataset      
-
-
-
-## Qualcomm SDK Installation
-
-### Qualcomm Software Center
-
-1. Sign in to Qualcomm Developer Portal.
-2. Open Qualcomm Software Center.
-3. Download SDK packages available for your board.
-4. Install required components.
+python.exe main.py --default
+```
 
 pip freeze > requirements.txt

@@ -1,7 +1,8 @@
 from src.import_to_onnx import get_onnx_models
 import src.procesing_data as procesing_data
+import src.quantisation as quantisation
 import argparse
-import v2.47.0.260601
+
 
 
 def main(args):
@@ -18,6 +19,9 @@ def main(args):
         get.modify_onnx()
         get.check_results()   
         procesing_data.get_calibration_data(args.imgsz).process() 
+        processing_model= quantisation.processing_model('calibration_data.txt', model_name="yolo11n_split")
+        converted_model = processing_model.convert_model()
+        processing_model.compiled_model(converted_model)
 
     if 'import' in args.import_mode:
         print('import....')
